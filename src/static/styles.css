@@ -90,8 +90,9 @@ section h3 {
 }
 
 .participants-list {
-  padding-left: 20px;
+  padding-left: 0;
   color: #39445e;
+  list-style: none;
 }
 
 .participants-list li {
@@ -99,11 +100,21 @@ section h3 {
   overflow-wrap: anywhere;
 }
 
+.participant-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.participant-item span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .participants-list .empty-participants {
   color: #68738a;
   font-style: italic;
-  list-style: none;
-  margin-left: -20px;
 }
 
 .form-group {
@@ -138,6 +149,45 @@ button {
 
 button:hover {
   background-color: #3949ab;
+}
+
+button.remove-participant-button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #b42318;
+}
+
+button.remove-participant-button:hover:not(:disabled) {
+  border-color: #f3c7c3;
+  background-color: #fff0ef;
+}
+
+button.remove-participant-button:focus-visible {
+  outline: 2px solid #b42318;
+  outline-offset: 2px;
+}
+
+button.remove-participant-button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+button.remove-participant-button svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .message {
